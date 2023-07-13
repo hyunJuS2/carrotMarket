@@ -29,4 +29,11 @@ public class Item {
         this.price = itemRequestDto.getPrice();
         this.username = itemRequestDto.getUsername();
     }
+
+    public void update(ItemRequestDto itemRequestDto) {
+        this.title = itemRequestDto.getTitle();
+        this.content = itemRequestDto.getContent();
+        this.username = itemRequestDto.getUsername();
+        this.price = itemRequestDto.getPrice();
+    }
 }
