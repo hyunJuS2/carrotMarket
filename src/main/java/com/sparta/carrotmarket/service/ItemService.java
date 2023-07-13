@@ -7,6 +7,8 @@ import com.sparta.carrotmarket.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ItemService {
@@ -20,5 +22,9 @@ public class ItemService {
         //Entity -> ResponseDto
         ItemResponseDto itemResponseDto = new ItemResponseDto(saveItem);
         return itemResponseDto;
+    }
+
+    public List<ItemResponseDto> getItems() {
+        return itemRepository.findAll().stream().map(ItemResponseDto::new).toList();
     }
 }
